@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 80%;
+	border: 1px red solid;
+	margin: auto;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+header {
+	width: 100%;
+	background-color: red;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+.left-column {
+	width: 25%;
+	border: 1px blue solid;
+	display: inline-block;
+	vertical-align: top;
+}
+
+	.player {
+		width: 100%;
+		display: inline-block;
+		border: 1px orange solid;
+	}
+
+		.name {
+			float: left;
+			display: inline-block;
+			margin: 5px;
+		}
+
+		.tile-choice {
+			float: left;
+			display: inline-block;
+			margin: 5px;
+		}
+
+.right-column {
+	width: 74%;
+	border: 1px green solid;
+	display: inline-block;
+	vertical-align: top;
+}
+
+	.tic-row {
+		width: 100%;
+		border: 1px green solid;
+		display: block;
+		vertical-align: top;
+	}
+
+		.tic-square {
+			width: 30%;
+			border: 1px green solid;
+			display: inline-block;
+		}
