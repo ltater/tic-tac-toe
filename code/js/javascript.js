@@ -1,9 +1,9 @@
 $(function() {
 
-var $playerOne = {name: null, tile: null, moves: [], wins: 0};
-var $playerTwo = {name: null, tile: null, moves: [], wins: 0};
+var $playerOne = {name: null, tile: null, turn: null, moves: [], wins: 0};
+var $playerTwo = {name: null, tile: null, turn: null, moves: [], wins: 0};
 
-/*// Introduction
+// Introduction
 	// Click start to play Tic Tac Toe!
 		$(".prompts").html("Click start to play Tic Tac Toe!").append("<input type='button' id='start' value='start'>");
 
@@ -39,31 +39,59 @@ var $playerTwo = {name: null, tile: null, moves: [], wins: 0};
 				var coinFlipWinner = Math.random();
 				var coinFlipLoser;
 				if (coinFlipWinner < 0.5) {
-					coinFlipWinner = $playerOne.name;
-					coinFlipLoser = $playerTwo.name;
-					$(".prompts").html("Heads wins! " + coinFlipWinner + ", choose X or O.").append("<input type='button' id='tile-x' value='X'>").append("<input type='button' id='tile-o' value='O'>");
+					coinFlipWinner = $playerOne;
+					coinFlipLoser = $playerTwo;
+
+					//Set whose turn it is to play
+					$playerOne.turn = true;
+					$playerTwo.turn = false;
+					//console.log('P1 true - player 1s turn is' + $playerOne.turn);
+					//console.log('P2 false - player 2s turn is' + $playerTwo.turn);					
+
+					$(".prompts").html("Heads wins! " + coinFlipWinner.name + ", choose X or O.").append("<input type='button' id='tile-x' value='X'>").append("<input type='button' id='tile-o' value='O'>");
 					//console.log(coinFlipWinner);
 					//console.log(coinFlipLoser);
+
 				} else if (coinFlipWinner > 0.5) {
-					coinFlipWinner = $playerTwo.name;
-					coinFlipLoser = $playerOne.name;
-					$(".prompts").html("Tails wins! " + coinFlipWinner + ", choose X or O.").append("<input type='button' id='tile-x' value='X'>").append("<input type='button' id='tile-o' value='O'>");
+					coinFlipWinner = $playerTwo;
+					coinFlipLoser = $playerOne;
+
+					//Set whose turn it is to play
+					$playerOne.turn = false;
+					$playerTwo.turn = true;
+					//console.log('P1 - false player 1s turn is' + $playerOne.turn);
+					//console.log('P2 - true player 2s turn is' + $playerTwo.turn);
+
+					$(".prompts").html("Tails wins! " + coinFlipWinner.name + ", choose X or O.").append("<input type='button' id='tile-x' value='X'>").append("<input type='button' id='tile-o' value='O'>");
 					//console.log(coinFlipWinner);
 					//console.log(coinFlipLoser);
+
 				} else {
 					$(".prompts").html("Drat. It's a tie. Work this out.");
 					//console.log("Drat. It's a tie. Work this out.");
-				};
+				}
 
-			// If coinFlipWinner chooses X, then coinFlipLoser gets O
-			// If coinFlipWinner chooses O, then coinFlipWinner gets X
-
-
-			// Begin the game by choosing X
+			// If the winner chooses X, give the winner X and the loser O
 
 			$("#tile-x").on("click", function() {
-				$(".prompts").html(coinFlipWinner + " choose a square.")
+				coinFlipWinner.tile = 'X';
+				coinFlipLoser.tile = 'O';
 
+				$("#player-one-tile").html($playerOne.tile);
+				$("#player-two-tile").html($playerTwo.tile);
+
+				$(".prompts").html(coinFlipWinner.name + " choose a square.")
+			});
+
+			// If the winner chooses O, give the winner O and the loser X
+			$("#tile-o").on("click", function() {
+				coinFlipWinner.tile = 'O';
+				coinFlipLoser.tile = 'X';
+				
+				$("#player-one-tile").html($playerOne.tile);
+				$("#player-two-tile").html($playerTwo.tile);
+
+				$(".prompts").html(coinFlipWinner.name + " choose a square.")
 			});
 			});
 			});
@@ -71,15 +99,24 @@ var $playerTwo = {name: null, tile: null, moves: [], wins: 0};
 			});
 		});
 
-*/
+
 // Play the game
 
-var winningCombo = [[a, b, c], [d, e, f], [g, h, i], [a, d, g], [b, e, h], [c, f, i], [a, e, i], [c, e, g]];
+//var winningCombo = [[a, b, c], [d, e, f], [g, h, i], [a, d, g], [b, e, h], [c, f, i], [a, e, i], [c, e, g]];
+
+/*var $playerOne = {name: null, tile: 'X', turn: true, moves: [], wins: 0};
+var $playerTwo = {name: null, tile: 'O', turn: false, moves: [], wins: 0};
+
+// Set coinFlipWinner's turn to true;
+// Set coinFlipLoser's turn to false;
 
 $(".tic-square").on("click", function() {
-	$(this).html('X');
-	
-});
+	if ($playerOne.turn = true){
+		$(this).html($playerOne.tile);
+	} else {
+		$(this).html($playerTwo.tile);
+	}
+});*/
 
 
 
