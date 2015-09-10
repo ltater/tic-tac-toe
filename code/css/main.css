@@ -2,9 +2,22 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: black;
+}
+
 .container {
 	width: 80%;
+	height: 500px;
 	border: 1px red solid;
+	margin: auto;
+	margin-top: 50px;
+	background-color: red;
+	border-radius: 25px;
+}
+
+.game {
+	width: 90%;
 	margin: auto;
 }
 
@@ -15,19 +28,21 @@
 	color: white;
 	padding: 20px;
 	text-align: center;
+	margin-top: 50px;
 }
 
 .left-column {
 	width: 25%;
-	border: 1px blue solid;
+	border: 2px black solid;
 	display: inline-block;
 	vertical-align: top;
+	background-color: white;
 }
 
 	.player {
 		width: 100%;
 		display: inline-block;
-		border: 1px orange solid;
+		padding: 5px;
 	}
 
 		.name {
@@ -44,20 +59,25 @@
 
 .right-column {
 	width: 74%;
-	border: 1px green solid;
 	display: inline-block;
 	vertical-align: top;
 }
 
 	.tic-row {
 		width: 100%;
-		border: 1px green solid;
 		display: block;
 		vertical-align: top;
 	}
 
 		.tic-square {
 			width: 30%;
-			border: 1px green solid;
 			display: inline-block;
+			padding: 20px;
+			text-align: center;
+		}
+
+		#a, #b, #c, #d, #e, #f, #g, #h, #i {
+			border: 3px black solid;
+			float: left;
+			background-color: white;
 		}
