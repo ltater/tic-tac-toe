@@ -104,10 +104,6 @@ var players = [$playerOne, $playerTwo];
 		// HELP: Look at this array. If .turn is set to true, play .tile. Automatically find the true one without if/else.
 		// If the player's turn is true, when he/she clicks on a square, put his/her tile in it
 
-
-		//Issue: running through all of them because any time you click any old square, all of the functions with that click will run.
-		//Need to get more specific and make it a one action situation.
-
 		function swapTurns(turn) {
 			if ($playerOne.turn === true) {
 				$playerOne.turn = false;
@@ -143,9 +139,13 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#a").html($playerOne.tile).attr("value", "true");
+					$playerOne.moves.push("a");
+					console.log($playerOne.moves);
 					console.log("#a player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#a").html($playerTwo.tile).attr("value", "true");
+					$playerTwo.moves.push("a");
+					console.log($playerTwo.moves);
 					console.log("#a player two's turn is " + $playerTwo.turn);
 				}
 
@@ -160,9 +160,13 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#b").html($playerOne.tile).attr("value", "true");
+					$playerOne.moves.push("b");
+					console.log($playerOne.moves);
 					console.log("#b player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#b").html($playerTwo.tile).attr("value", "true");
+					$playerTwo.moves.push("b");
+					console.log($playerTwo.moves);
 					console.log("#b player two's turn is " + $playerTwo.turn);
 				}
 					
@@ -178,9 +182,13 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#c").html($playerOne.tile).attr("value", "true");
+					$playerOne.moves.push("c");
+					console.log($playerOne.moves);
 					console.log("#c player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#c").html($playerTwo.tile).attr("value", "true");
+					$playerTwo.moves.push("c");
+					console.log($playerTwo.moves);
 					console.log("#c player two's turn is " + $playerTwo.turn);
 				}
 
@@ -195,10 +203,14 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#d").html($playerOne.tile).attr("value", "true");
-					console.log("#c player one's turn is " + $playerOne.turn);
+					$playerOne.moves.push("d");
+					console.log($playerOne.moves);
+					console.log("#d player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#d").html($playerTwo.tile).attr("value", "true");
-					console.log("#c player two's turn is " + $playerTwo.turn);
+					$playerTwo.moves.push("d");
+					console.log($playerTwo.moves);
+					console.log("#d player two's turn is " + $playerTwo.turn);
 				}
 
 				swapTurns();
@@ -212,10 +224,14 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#e").html($playerOne.tile).attr("value", "true");
-					console.log("#c player one's turn is " + $playerOne.turn);
+					$playerOne.moves.push("e");
+					console.log($playerOne.moves);
+					console.log("#e player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#e").html($playerTwo.tile).attr("value", "true");
-					console.log("#c player two's turn is " + $playerTwo.turn);
+					$playerTwo.moves.push("e");
+					console.log($playerTwo.moves);
+					console.log("#e player two's turn is " + $playerTwo.turn);
 				}
 
 				swapTurns();
@@ -229,10 +245,14 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#f").html($playerOne.tile).attr("value", "true");
-					console.log("#c player one's turn is " + $playerOne.turn);
+					$playerOne.moves.push("f");
+					console.log($playerOne.moves);
+					console.log("#f player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#f").html($playerTwo.tile).attr("value", "true");
-					console.log("#c player two's turn is " + $playerTwo.turn);
+					$playerTwo.moves.push("f");
+					console.log($playerTwo.moves);
+					console.log("#f player two's turn is " + $playerTwo.turn);
 				}
 
 				swapTurns();
@@ -246,10 +266,14 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#g").html($playerOne.tile).attr("value", "true");
-					console.log("#c player one's turn is " + $playerOne.turn);
+					$playerOne.moves.push("g");
+					console.log($playerOne.moves);
+					console.log("#g player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#g").html($playerTwo.tile).attr("value", "true");
-					console.log("#c player two's turn is " + $playerTwo.turn);
+					$playerTwo.moves.push("g");
+					console.log($playerTwo.moves);
+					console.log("#g player two's turn is " + $playerTwo.turn);
 				}
 
 				swapTurns();
@@ -263,10 +287,14 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#h").html($playerOne.tile).attr("value", "true");
-					console.log("#c player one's turn is " + $playerOne.turn);
+					$playerOne.moves.push("h");
+					console.log($playerOne.moves);
+					console.log("#h player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#h").html($playerTwo.tile).attr("value", "true");
-					console.log("#c player two's turn is " + $playerTwo.turn);
+					$playerTwo.moves.push("h");
+					console.log($playerTwo.moves);
+					console.log("#h player two's turn is " + $playerTwo.turn);
 				}
 
 				swapTurns();
@@ -280,14 +308,24 @@ var players = [$playerOne, $playerTwo];
 
 				if ($playerOne.turn === true){
 					$("#i").html($playerOne.tile).attr("value", "true");
-					console.log("#c player one's turn is " + $playerOne.turn);
+					$playerOne.moves.push("i");
+					console.log($playerOne.moves);
+					console.log("#i player one's turn is " + $playerOne.turn);
 				} else if ($playerOne.turn === false) {
 					$("#i").html($playerTwo.tile).attr("value", "true");
-					console.log("#c player two's turn is " + $playerTwo.turn);
+					$playerTwo.moves.push("i");
+					console.log($playerTwo.moves);
+					console.log("#i player two's turn is " + $playerTwo.turn);
 				}
 
 				swapTurns();
 			}
 		});
+
+
+//var $playerOne = {name: null, tile: null, turn: null, moves: [], wins: 0};
+//var $playerTwo = {name: null, tile: null, turn: null, moves: [], wins: 0};
+
+
 
 });
