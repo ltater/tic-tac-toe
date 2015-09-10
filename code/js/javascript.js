@@ -112,25 +112,38 @@ var players = [$playerOne, $playerTwo];
 		function swapTurns(turn) {
 			if ($playerOne.turn === true) {
 				$playerOne.turn = false;
-				$(".prompts").html($playerTwo.name + " choose a square.")
+				$(".prompts").html($playerTwo.name + " choose a square.");
+				$("#player-two").css("background-color", "blue");
+				$("#player-one").css("background-color", "white");
 				console.log("function: player one's new turn is " + $playerOne.turn);
 			} else if ($playerOne.turn === false) {
 				$playerOne.turn = true;
 				$(".prompts").html($playerOne.name + " choose a square.")
+				$("#player-one").css("background-color", "blue");
+				$("#player-two").css("background-color", "white");
 				console.log("function: player one's new turn is " + $playerOne.turn);
 			} else if ($playerTwo.turn === true) {
 				$playerTwo.turn = false;
 				$(".prompts").html($playerOne.name + " choose a square.")
+				$("#player-one").css("background-color", "blue");
+				$("#player-two").css("background-color", "white");
 				console.log("function: player two's new turn is " + $playerTwo.turn);
 			} else if ($playerTwo.turn === false) {
 				$playerTwo.turn = true;
 				$(".prompts").html($playerTwo.name + " choose a square.")
 				console.log("function: player two's new turn is " + $playerTwo.turn);
+				$("#player-two").css("background-color", "blue");
+				$("#player-one").css("background-color", "white");
 			}
 		};
 
-
 		$("#a").on("click", function() {
+			//if (($("#a").length === 1)) {
+			//	console.log("Pick a new square!");
+			//} else {
+			//	console.log("That spot is free.");
+			//}
+
 			if ($playerOne.turn === true){
 				$("#a").html($playerOne.tile);
 				console.log("#a player one's turn is " + $playerOne.turn);
@@ -139,11 +152,17 @@ var players = [$playerOne, $playerTwo];
 				console.log("#a player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 
 		});
 
 		$("#b").on("click", function() {
+			//if (($("#b").length === 1)) {
+			//	console.log("Pick a new square!");
+			//} else {
+			//	console.log("That spot is free.");
+			//}
+
 			if ($playerOne.turn === true){
 				$("#b").html($playerOne.tile);
 				console.log("#b player one's turn is " + $playerOne.turn);
@@ -151,11 +170,18 @@ var players = [$playerOne, $playerTwo];
 				$("#b").html($playerTwo.tile);
 				console.log("#b player two's turn is " + $playerTwo.turn);
 			}
+				
+			swapTurns();
 
-			swapTurns()
 		});
 
 		$("#c").on("click", function() {
+			//if (($("#c").length === 1)) {
+			//	console.log("Pick a new square!");
+			//} else {
+			//	console.log("That spot is free.");
+			//}
+
 			if ($playerOne.turn === true){
 				$("#c").html($playerOne.tile);
 				console.log("#c player one's turn is " + $playerOne.turn);
@@ -164,7 +190,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 		$("#d").on("click", function() {
@@ -176,7 +202,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 		$("#e").on("click", function() {
@@ -188,7 +214,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 		$("#f").on("click", function() {
@@ -200,7 +226,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 		$("#g").on("click", function() {
@@ -212,7 +238,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 		$("#h").on("click", function() {
@@ -224,7 +250,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 		$("#i").on("click", function() {
@@ -236,7 +262,7 @@ var players = [$playerOne, $playerTwo];
 				console.log("#c player two's turn is " + $playerTwo.turn);
 			}
 
-			swapTurns()
+			swapTurns();
 		});
 
 });
